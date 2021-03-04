@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import apiCalls from '../../apiCalls';
 import VillagerList from '../VillagerList/VillagerList';
-// import { Route } from 'react-router-dom';
+import ProfilePage from '../ProfilePage/ProfilePage';
 
 
 const App = () => {
