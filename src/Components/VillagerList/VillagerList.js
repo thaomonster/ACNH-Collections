@@ -2,22 +2,18 @@ import React from 'react';
 
 const VillagerList = ({villagers}) => {
 
-  const card = () => {
-    return villagers.map(villager => {
-      return (
-        <section key={villager.id} id={villager.id}>
-          <div>
-            <img src={villager.icon_uri} alt='villager icon' />
-            <p>{villager.name['name-USen']}</p>
-          </div>
-        </section>
-      )
-    })
-  }
+  const card = villagers.map(villager => {
+    return (
+      <section key={villager.id} id={villager.id}>
+          <img src={villager.icon_uri} alt='villager icon' />
+          <p>{villager.name['name-USen']}</p>
+      </section>
+    )
+  })
 
   return ( 
     <main>
-      {card()}
+      {card}
     </main>
   )
 }
