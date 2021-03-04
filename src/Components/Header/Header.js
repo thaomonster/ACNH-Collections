@@ -1,5 +1,5 @@
 import React from 'react';
-import leafIcon from '../../assets/leaf-icon.png';
+import leafGreen from '../../assets/leaf-green.png';
 
 const Header = () => {
 
@@ -7,7 +7,7 @@ const Header = () => {
     <header>
        <h1>ACNH Collections</h1>
        <div className='nav-section'>
-          <img className='header-leaf' src={leafIcon} alt='Leaf Icon' />
+          <img className='header-leaf' src={leafGreen} alt='Leaf Icon' />
           <input
               type='text'
               placeholder='Search Villagers'

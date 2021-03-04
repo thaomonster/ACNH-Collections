@@ -3,8 +3,9 @@
 @import './Components/VillagerList/VillagerList.scss';
 @import './Components/Profile/Profile.scss';
 
-body {
+body, html {
   margin: 0;
-  background-image: url(./assets/acnh-background.jpg);
+  background: url(./assets/acnh-background.jpg) no-repeat center fixed;
   background-size: cover;
+  height: 100vh;
 }
