@@ -4,6 +4,13 @@
   border: 0.2em solid #2B758C;
   opacity: 0.8;
   border-radius: 10%;
+  font-weight: bold;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.15, 1.15);
+    background-color: #fffffa;
+  }
 }
 
 .card-container {
