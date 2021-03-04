@@ -1,5 +1,6 @@
 import React from 'react';
 import leafGreen from '../../assets/leaf-green.png';
+import leafWhite from '../../assets/leaf-white.png';
 
 const VillagerList = ({villagers}) => {
 
@@ -11,7 +12,11 @@ const VillagerList = ({villagers}) => {
             <img src={villager.icon_uri} alt='villager icon' />
             <p>{villager.name['name-USen']}</p>
           </div>
-          <img className='card-leaf' src={leafGreen} alt='Leaf Icon' />
+          <img 
+            className='card-leaf' 
+            src={leafWhite} 
+            alt='Leaf Icon'
+            />
         </article>
       </section>
     )
