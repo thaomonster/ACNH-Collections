@@ -12,4 +12,4 @@ getAllVillagers() {
   }
 }
 
-export default apiCalls
+export default apiCalls;
