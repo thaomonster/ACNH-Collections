@@ -2,3 +2,9 @@
 @import './Components/Header/Header.scss';
 @import './Components/VillagerList/VillagerList.scss';
 @import './Components/Profile/Profile.scss';
+
+body {
+  margin: 0;
+  background-image: url(./assets/acnh-background.jpg);
+  background-size: cover;
+}

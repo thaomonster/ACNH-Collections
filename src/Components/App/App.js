@@ -1,8 +1,11 @@
-function App() {
+import React from 'react';
+import Header from '../Header/Header';
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>Animal Crossing</h1>
-    </div>
+    <>
+      <Header />
+    </>
   );
 }
 
