@@ -1,4 +1,5 @@
 import React from 'react';
+import leafIcon from '../../assets/leaf-icon.png';
 
 const VillagerList = ({villagers}) => {
 
@@ -8,6 +9,7 @@ const VillagerList = ({villagers}) => {
         <div className='card'>
           <img src={villager.icon_uri} alt='villager icon' />
           <p>{villager.name['name-USen']}</p>
+          <img className='card-leaf' src={leafIcon} alt='Leaf Icon' />
         </div>
       </section>
     )
