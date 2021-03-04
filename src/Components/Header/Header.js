@@ -7,12 +7,12 @@ const Header = () => {
     <header>
        <h1>ACNH Collections</h1>
        <div className='nav-section'>
-        <img className='header-leaf' src={leafIcon} alt='Leaf Icon' />
-        <input
-            type='text'
-            placeholder='Search Villagers'
-            aria-label='Search Villagers'
-          />
+          <img className='header-leaf' src={leafIcon} alt='Leaf Icon' />
+          <input
+              type='text'
+              placeholder='Search Villagers'
+              aria-label='Search Villagers'
+            />
        </div>
     </header>
   )
