@@ -5,7 +5,7 @@ const Header = () => {
 
   return (
     <header>
-       <h1>Animal Crossing</h1>
+       <h1>ACNH Collections</h1>
        <img className='header-leaf' src={leafIcon} alt='Leaf Icon' />
        <input
           type='text'
