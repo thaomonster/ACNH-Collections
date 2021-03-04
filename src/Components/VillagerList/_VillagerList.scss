@@ -1,7 +1,19 @@
 .card {
+  text-align: center;
+  background: #F6EEE1;
+  border: 0.2em solid #2B758C;
+  opacity: 0.8;
+  border-radius: 10%;
+}
+
+.card-container {
   overflow-y: scroll;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 1.5em;
   padding: 2em;
+}
+
+p {
+  margin: 0;
 }

@@ -5,7 +5,7 @@ const VillagerList = ({villagers}) => {
   const card = villagers.map(villager => {
     return (
       <section key={villager.id} id={villager.id} >
-        <div>
+        <div className='card'>
           <img src={villager.icon_uri} alt='villager icon' />
           <p>{villager.name['name-USen']}</p>
         </div>
@@ -14,7 +14,7 @@ const VillagerList = ({villagers}) => {
   })
 
   return ( 
-    <main className='card'>
+    <main className='card-container'>
       {card}
     </main>
   )
