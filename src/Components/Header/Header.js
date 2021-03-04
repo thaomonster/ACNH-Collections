@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header>
        <h1>Animal Crossing</h1>
-       <img src={leafIcon} />
+       <img className='header-leaf' src={leafIcon} alt='Leaf Icon' />
        <input
           type='text'
           placeholder='Search Villagers'
