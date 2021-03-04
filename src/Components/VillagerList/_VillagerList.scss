@@ -19,6 +19,7 @@
   height: 25%;
   width: 25%;
   margin-left: 75%;
+  cursor: pointer;
 }
 
 p {
@@ -30,6 +31,5 @@ p {
   &:focus {
     cursor: pointer;
     transform: scale(1.15, 1.15);
-    // background-color: #fffffa;
   }
 }
