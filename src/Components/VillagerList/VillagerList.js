@@ -8,7 +8,7 @@ const VillagerList = ({villagers}) => {
         <section key={villager.id} id={villager.id}>
           <div>
             <img src={villager.icon_uri} alt='villager icon' />
-           
+            <p>{villager.name['name-USen']}</p>
           </div>
         </section>
       )
