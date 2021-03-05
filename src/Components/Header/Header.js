@@ -11,15 +11,15 @@ const Header = () => {
   return (
     <header>
        <h1>ACNH Collections</h1>
-       <div className='nav-section'>
-          <img className='header-leaf' src={leafGreen} alt='Leaf Icon' />
-          <input
-              type='text'
-              placeholder='Search Villagers'
-              aria-label='Search Villagers'
-            />
-            <p className='search-emoji'>{String.fromCodePoint(0x1F50D)}</p>
-       </div>
+        <form className='nav-section'>
+            <img className='header-leaf' src={leafGreen} alt='Leaf Icon' />
+            <input
+                type='text'
+                placeholder='Search Villagers'
+                aria-label='Search Villagers'
+              />
+              <p className='search-emoji'>{String.fromCodePoint(0x1F50D)}</p>
+        </form>
     </header>
   )
 }
