@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .card {
   text-align: center;
   background: #F6EEE1;
@@ -28,7 +32,7 @@ p {
 }
 
 .thumbnail-img {
-  transition: cursor 0.5s, transform 0.5s;
+  transition:  0.5s ease;
     &:hover,
     &:focus {
       cursor: pointer;

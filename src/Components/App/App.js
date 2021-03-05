@@ -8,6 +8,7 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 
 const App = () => {
   const [villagers, setVillagers] = useState([]);
+  const [searchQuery, updateQuery] = useState([]);
   // const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
@@ -15,9 +16,18 @@ const App = () => {
       .then(data => setVillagers(data))
   }, [])
 
+  const getSearchedVillagers = (searchQuery) => {
+    updateQuery(searchQuery)
+  }
+
   return (
     <>
-      <Header villagers={villagers}/>
+      <Header 
+        villagers={villagers}
+        searchQuery={searchQuery} 
+        updateQuery={updateQuery}
+        getSearchedVillagers={getSearchedVillagers}
+      />
       <Route 
         exact path='/' 
         render={() => <VillagerList villagers={villagers}/>}

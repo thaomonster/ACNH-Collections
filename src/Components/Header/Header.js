@@ -1,20 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import leafGreen from '../../assets/leaf-green.png';
 
-const Header = ({villagers}) => {
-  const [search, updateSearch] = useState('')
+const Header = ({villagers, searchQuery, updateQuery, getSearchedVillagers}) => {
 
-  const handleOnChange = (event) => {
-    updateSearch(event.target.value.toLowerCase())
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const updateVillagers = villagers.filter(villager => villager.name['name-USen'].toLowerCase().includes(search))
-    updateSearch('')
+  const handleOnChange = () => {
+    const updateVillagers = villagers.filter(villager => villager.name['name-USen'].toLowerCase().includes(searchQuery))
+    updateQuery('')
     getSearchedVillagers(updateVillagers)
   }
-
+   
   return (
     <header>
        <h1>ACNH Collections</h1>
@@ -24,6 +18,9 @@ const Header = ({villagers}) => {
                 type='text'
                 placeholder='Search Villagers'
                 aria-label='Search Villagers'
+                name='search'
+                value={searchQuery}
+                onChange={event => updateQuery(event.target.value)}
               />
               <p className='search-emoji'>{String.fromCodePoint(0x1F50D)}</p>
         </form>
