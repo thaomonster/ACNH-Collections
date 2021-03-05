@@ -2,12 +2,6 @@ import React from 'react';
 import leafGreen from '../../assets/leaf-green.png';
 
 const Header = ({villagers, searchQuery, updateQuery, getSearchedVillagers}) => {
-
-  const filterVillagers = () => {
-    const updateVillagers = villagers.filter(villager => villager.name['name-USen'].toLowerCase().includes(searchQuery))
-    updateQuery('')
-    getSearchedVillagers(updateVillagers)
-  }
    
   return (
     <header>
