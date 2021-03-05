@@ -19,6 +19,7 @@ const ProfilePage = ({match}) => {
         <p>Birthday: {selectedVillager['birthday-string']}</p>
         <p>Species: {selectedVillager.species}</p>
         <p>Gender: {selectedVillager.gender}</p>
+        <p>Catch Phrase: {selectedVillager['catch-phrase']}</p>
       </section>
     )
   }
