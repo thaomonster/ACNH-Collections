@@ -15,9 +15,19 @@ const App = () => {
       .then(data => setVillagers(data))
   }, [])
 
+  const getSearchedVillagers = (inputValue) => {
+    const filterVillagers = villagers.filter(villager => {
+      console.log(villager.name['name-USen'])
+      return villager.name['name-USen'].toLowerCase().includes(inputValue)
+    })
+    setVillagers(filterVillagers)
+  }
+
   return (
     <>
-      <Header />
+      <Header 
+        getSearchedVillagers={getSearchedVillagers}
+      />
       <Route 
         exact path='/' 
         render={() => <VillagerList villagers={villagers}/>}
