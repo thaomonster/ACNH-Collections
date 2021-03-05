@@ -1,11 +1,18 @@
 import React, {useState} from 'react';
 import leafGreen from '../../assets/leaf-green.png';
 
-const Header = () => {
-  const [searchBar, updateSearch] = useState('')
+const Header = ({villagers}) => {
+  const [search, updateSearch] = useState('')
 
   const handleOnChange = (event) => {
     updateSearch(event.target.value.toLowerCase())
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const updateVillagers = villagers.filter(villager => villager.name['name-USen'].toLowerCase().includes(search))
+    updateSearch('')
+    getSearchedVillagers(updateVillagers)
   }
 
   return (

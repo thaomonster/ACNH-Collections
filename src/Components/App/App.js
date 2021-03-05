@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <>
-      <Header />
+      <Header villagers={villagers}/>
       <Route 
         exact path='/' 
         render={() => <VillagerList villagers={villagers}/>}
