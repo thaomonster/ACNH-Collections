@@ -13,7 +13,8 @@ const ProfilePage = ({match}) => {
   if (selectedVillager) {
     return (
       <section>
-        <p>Personality: {selectedVillager.personality}</p>
+        <img src={selectedVillager.image_uri} alt='villager profile' />
+      
       </section>
     )
   }
