@@ -3,12 +3,19 @@
 }
 
 h2 {
-  text-align: center;
   font-size: 2em;
+  display: flex;
+  flex-direction: row;
+  margin: 4% 0% 0% 33%;
 }
 
 .info {
   font-weight: bold;
+}
+
+.leaf-margin {
+  margin: -7% 0% 5% 37%;
+  object-fit: cover;
 }
 
 .left-side {
@@ -29,6 +36,11 @@ p {
   border-radius: 5%;
   margin: 5% 20%;
   opacity: 0.8;
+}
+
+.profile-leaf {
+  height: 2em;
+  width: 2em;
 }
 
 .profile-page {

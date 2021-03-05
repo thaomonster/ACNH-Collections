@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import apiCalls from '../../apiCalls';
+import leafGreen from '../../assets/leaf-green.png';
 
 const ProfilePage = ({match}) => {
   const [selectedVillager, setSelectedVillager] = useState(null)
@@ -13,7 +14,11 @@ const ProfilePage = ({match}) => {
   if (selectedVillager) {
     return (
       <section className='passport-container'>
-        <h2>--- PASSPORT ---</h2>
+        <h2>--- PASSPORT ---
+          <div className='leaf-margin'>
+            <img className='profile-leaf' src={leafGreen} alt='Leaf Icon' />
+          </div>
+        </h2>
         <article className='profile-page'>
           <div className='left-side'>
             <img 
