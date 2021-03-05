@@ -13,7 +13,7 @@ const ProfilePage = ({match}) => {
   if (selectedVillager) {
     return (
       <section className='profile-page-wrapper'>
-        <div>
+        <div className='profile-picture'>
           <img src={selectedVillager.image_uri} alt='villager profile' />
         </div>
         <div>
