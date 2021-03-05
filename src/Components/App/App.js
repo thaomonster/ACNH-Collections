@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import apiCalls from '../../apiCalls';
 import VillagerList from '../VillagerList/VillagerList';
 import ProfilePage from '../ProfilePage/ProfilePage';
-import { Route } from 'react-router-dom';
 
 
 const App = () => {
@@ -18,8 +18,14 @@ const App = () => {
   return (
     <>
       <Header />
-      <VillagerList villagers={villagers}/>
-      <Route path='/' />
+      <Route 
+        exact path='/' 
+        render={() => <VillagerList villagers={villagers}/>}
+      />
+      <Route 
+        path='/{villagerID}' 
+        component={ ProfilePage }
+      />
     </>
   );
 }
