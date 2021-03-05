@@ -1,3 +1,9 @@
+.info-container {
+  border: 0.2em solid #2B758C;
+  text-align: center;
+  padding: 5%;
+}
+
 .profile-page-wrapper {
   display: flex;
   flex-direction: row;
@@ -8,5 +14,5 @@
 .profile-picture {
   border: 0.2em solid #2B758C;
   padding: 1%;
-  margin-right: 15%;
+  margin-right: 10%;
 }

@@ -16,7 +16,7 @@ const ProfilePage = ({match}) => {
         <div className='profile-picture'>
           <img src={selectedVillager.image_uri} alt='villager profile' />
         </div>
-        <div>
+        <div className='info-container'>
           <p>Name: {selectedVillager.name['name-USen']}</p>
           <p>Personality: {selectedVillager.personality}</p>
           <p>Birthday: {selectedVillager['birthday-string']}</p>
