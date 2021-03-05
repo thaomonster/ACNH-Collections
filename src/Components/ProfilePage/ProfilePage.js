@@ -15,16 +15,23 @@ const ProfilePage = ({match}) => {
       <section className='passport-container'>
         <h2>--- PASSPORT ---</h2>
         <article className='profile-page'>
-          <img src={selectedVillager.image_uri} alt='villager profile' />
-          <div>
-            <p>Name: <b>{selectedVillager.name['name-USen']}</b></p>
-            <p>Personality: <b>{selectedVillager.personality}</b></p>
-            <p>Birthday: <b>{selectedVillager['birthday-string']}</b></p>
-            <p>Species: <b>{selectedVillager.species}</b></p>
-            <p>Gender: <b>{selectedVillager.gender}</b></p>
-            <p>Catch Phrase: <b>{selectedVillager['catch-phrase']}</b></p>
-            <p>Saying: <b>{selectedVillager.saying}</b></p>
-          </div>
+          <img 
+            src={selectedVillager.image_uri} 
+            alt='villager profile' 
+            className='profile-picture'
+            />
+         <div className='info'>
+            <p>Personality: {selectedVillager.personality}
+              <span className='gender'>{String.fromCodePoint(0x26A7)} {selectedVillager.gender}</span>
+            </p>
+            <p className='species'>Species: {selectedVillager.species}</p>
+            <p className='name'>Name: {selectedVillager.name['name-USen']}</p>
+            <p>{String.fromCodePoint(0x1F330)}Born: {selectedVillager['birthday-string']}</p>
+            <div className='sayings'>
+              <p>{String.fromCodePoint(0x1F5E8)}Catch Phrase: {selectedVillager['catch-phrase']}</p>
+              <p>{String.fromCodePoint(0x1F4AC)}Saying: {selectedVillager.saying}</p>
+            </div>
+         </div>
         </article>
       </section>
     )

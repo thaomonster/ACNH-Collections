@@ -1,13 +1,54 @@
+.gender {
+  margin-left: 15%;
+}
+
+h2 {
+  color: rgb(131, 130, 130);
+  text-align: center;
+}
+
+.info {
+  margin: 0% 1% 0% 0%;
+  font-size: 1.2em;
+}
+
+.name {
+  font-size: 1.5em;
+}
+
+p {
+  margin-bottom: 5%;
+}
+
 .passport-container {
   border: 0.2em solid #2B758C;
   border-radius: 5%;
-  margin: 5% 10%;
-  text-align: center;
+  margin: 5% 20%;
+  background-color: #fffffa;
+  opacity: 0.8;
 }
 
 .profile-page {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  padding: 5%;
+  margin-left: 10%;
 }
+
+.profile-picture {
+  border-radius: 5%;
+  border: 0.25em solid #00962A;
+  height:10em;
+  width: 10em;
+  margin-right: 15%;
+}
+
+.sayings {
+  background-color: #F6EEE1;
+  border: 0.15em solid #fffffa;
+  border-radius: 10%;
+}
+
+.species {
+  font-size: 1.2em;
+}
+
