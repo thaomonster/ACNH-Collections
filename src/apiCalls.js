@@ -10,8 +10,8 @@ export const getAllVillagers = async () => {
     return checkResponse(allVillagers)
 }
 
-  // getSelectedVillager(id) {
-  //   return fetch(`https://acnhapi.com/v1a/villagers/${id}`)
-  //     .then(response => this.checkResponse(response));
-  //   },
+export const getSelectedVillager =  async (id) => {
+  const selectedVillager = await fetch(`https://acnhapi.com/v1a/villagers/${id}`)
+   return checkResponse(selectedVillager)
+}
 
