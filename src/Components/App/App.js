@@ -8,7 +8,6 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 
 const App = () => {
   const [villagers, setVillagers] = useState([]);
-  const [searchQuery, updateQuery] = useState([]);
   // const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
@@ -16,16 +15,17 @@ const App = () => {
       .then(data => setVillagers(data))
   }, [])
 
-  const getSearchedVillagers = (searchQuery) => {
-    updateQuery(searchQuery)
+  const getSearchedVillagers = (inputValue) => {
+    const filterVillagers = villagers.filter(villager => {
+      console.log(villager.name['name-USen'])
+      return villager.name['name-USen'].toLowerCase().includes(inputValue)
+    })
+    setVillagers(filterVillagers)
   }
 
   return (
     <>
       <Header 
-        villagers={villagers}
-        searchQuery={searchQuery} 
-        updateQuery={updateQuery}
         getSearchedVillagers={getSearchedVillagers}
       />
       <Route 

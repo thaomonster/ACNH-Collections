@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import leafGreen from '../../assets/leaf-green.png';
 
-const Header = ({villagers, searchQuery, updateQuery, getSearchedVillagers}) => {
-   
+const Header = ({getSearchedVillagers}) => {
+  const [query, setQuery] = useState('');
+
+  const handleOnChange = event => {
+    const lowerCaseValue = event.target.value.toLowerCase()
+    setQuery(lowerCaseValue)
+    getSearchedVillagers(lowerCaseValue)
+  }
+
   return (
     <header>
        <h1>ACNH Collections</h1>
@@ -10,13 +17,12 @@ const Header = ({villagers, searchQuery, updateQuery, getSearchedVillagers}) => 
             <img className='header-leaf' src={leafGreen} alt='Leaf Icon' />
             <input
                 type='text'
-                placeholder='Search Villagers'
-                aria-label='Search Villagers' 
+                placeholder='Search'
+                aria-label='Search' 
                 name='search'
-                value={searchQuery}
-                onChange={event => updateQuery(event.target.value)}
+                value={query}
+                onChange={handleOnChange}
               />
-              <p className='search-emoji'>{String.fromCodePoint(0x1F50D)}</p>
         </form>
     </header>
   )
