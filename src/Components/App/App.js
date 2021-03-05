@@ -23,7 +23,7 @@ const App = () => {
         render={() => <VillagerList villagers={villagers}/>}
       />
       <Route 
-        path='/{villagerID}' 
+        path='/:id'
         component={ ProfilePage }
       />
     </>
