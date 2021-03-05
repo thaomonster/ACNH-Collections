@@ -10,7 +10,19 @@ const ProfilePage = ({match}) => {
       .then(data => setSelectedVillager(data))
   }, [id])
 
-  
+  if (selectedVillager) {
+    return (
+      <section>
+        <p>Personality: {selectedVillager.personality}</p>
+      </section>
+    )
+  }
+
+  return (
+    <div>
+      loading
+    </div>
+  )
 }
 
 export default ProfilePage;
