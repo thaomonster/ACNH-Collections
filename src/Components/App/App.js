@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import apiCalls from '../../apiCalls';
 import VillagerList from '../VillagerList/VillagerList';
 import ProfilePage from '../ProfilePage/ProfilePage';
+import { Route } from 'react-router-dom';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
     <>
       <Header />
       <VillagerList villagers={villagers}/>
+      <Route path='/' />
     </>
   );
 }

@@ -28,9 +28,10 @@ p {
 }
 
 .thumbnail-img {
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    transform: scale(1.15, 1.15);
-  }
+  transition: cursor 0.5s, transform 0.5s;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      transform: scale(1.15, 1.15);
+    }
 }
