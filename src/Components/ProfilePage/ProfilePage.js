@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import apiCalls from '../../apiCalls';
 import leafGreen from '../../assets/leaf-green.png';
+import backButton from '../../assets/back-button.png';
 
 const ProfilePage = ({match}) => {
   const [selectedVillager, setSelectedVillager] = useState(null)
@@ -14,6 +15,7 @@ const ProfilePage = ({match}) => {
   if (selectedVillager) {
     return (
       <section className='passport-container'>
+        <img  className='back-button' src={backButton} alt='back button'/>
         <h2>--- PASSPORT ---
           <div className='leaf-margin'>
             <img className='profile-leaf' src={leafGreen} alt='Leaf Icon' />
