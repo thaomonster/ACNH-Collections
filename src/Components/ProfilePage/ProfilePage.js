@@ -21,14 +21,14 @@ const ProfilePage = ({match}) => {
               alt='villager profile' 
               className='profile-picture'
               />
-            <p>Name: {selectedVillager.name['name-USen']}</p>
+            <p>{String.fromCodePoint(0x1F9F3)}Name: {selectedVillager.name['name-USen']}</p>
             <p>{String.fromCodePoint(0x1F330)}Born: {selectedVillager['birthday-string']}</p>
           </div>
          <div className='info'>
           <p>Personality: {selectedVillager.personality}
             <span className='gender'>{String.fromCodePoint(0x26A7)} {selectedVillager.gender}</span>
           </p>
-          <p>Species: {selectedVillager.species}</p>
+          <p>{String.fromCodePoint(0x1F331)}Species: {selectedVillager.species}</p>
           <p>{String.fromCodePoint(0x1F5E8)}Catch Phrase: {selectedVillager['catch-phrase']}</p>
           <p>{String.fromCodePoint(0x1F4AC)}Quote: {selectedVillager.saying}</p>
          </div>

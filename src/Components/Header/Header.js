@@ -13,6 +13,7 @@ const Header = () => {
               placeholder='Search Villagers'
               aria-label='Search Villagers'
             />
+            <p className='search-emoji'>{String.fromCodePoint(0x1F50D)}</p>
        </div>
     </header>
   )
