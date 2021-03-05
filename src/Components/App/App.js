@@ -17,7 +17,6 @@ const App = () => {
 
   const getSearchedVillagers = (inputValue) => {
     const filterVillagers = villagers.filter(villager => {
-      console.log(villager.name['name-USen'])
       return villager.name['name-USen'].toLowerCase().includes(inputValue)
     })
     setVillagers(filterVillagers)
