@@ -12,15 +12,19 @@ const ProfilePage = ({match}) => {
 
   if (selectedVillager) {
     return (
-      <section>
-        <img src={selectedVillager.image_uri} alt='villager profile' />
-        <p>Name: {selectedVillager.name['name-USen']}</p>
-        <p>Personality: {selectedVillager.personality}</p>
-        <p>Birthday: {selectedVillager['birthday-string']}</p>
-        <p>Species: {selectedVillager.species}</p>
-        <p>Gender: {selectedVillager.gender}</p>
-        <p>Catch Phrase: {selectedVillager['catch-phrase']}</p>
-        <p>Saying: {selectedVillager.saying}</p>
+      <section className='profile-page-wrapper'>
+        <div>
+          <img src={selectedVillager.image_uri} alt='villager profile' />
+        </div>
+        <div>
+          <p>Name: {selectedVillager.name['name-USen']}</p>
+          <p>Personality: {selectedVillager.personality}</p>
+          <p>Birthday: {selectedVillager['birthday-string']}</p>
+          <p>Species: {selectedVillager.species}</p>
+          <p>Gender: {selectedVillager.gender}</p>
+          <p>Catch Phrase: {selectedVillager['catch-phrase']}</p>
+          <p>Saying: {selectedVillager.saying}</p>
+        </div>
       </section>
     )
   }
