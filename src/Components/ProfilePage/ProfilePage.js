@@ -15,7 +15,8 @@ const ProfilePage = ({match}) => {
       <section>
         <img src={selectedVillager.image_uri} alt='villager profile' />
         <p>Name: {selectedVillager.name['name-USen']}</p>
-        
+        <p>Personality: {selectedVillager.personality}</p>
+       
       </section>
     )
   }
