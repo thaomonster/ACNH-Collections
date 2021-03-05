@@ -20,6 +20,7 @@ const ProfilePage = ({match}) => {
         <p>Species: {selectedVillager.species}</p>
         <p>Gender: {selectedVillager.gender}</p>
         <p>Catch Phrase: {selectedVillager['catch-phrase']}</p>
+        <p>Saying: {selectedVillager.saying}</p>
       </section>
     )
   }
