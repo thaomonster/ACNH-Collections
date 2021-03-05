@@ -1,0 +1,65 @@
+.back-button {
+  height: 3em;
+  width:3em;
+  padding: 1%;
+}
+
+.gender {
+  margin-left: 10%;
+}
+
+h2 {
+  font-size: 2em;
+  display: flex;
+  flex-direction: row;
+  margin: 4% 0% 0% 33%;
+}
+
+.info {
+  font-weight: bold;
+}
+
+.leaf-margin {
+  margin: -7% 0% 5% 37%;
+  object-fit: cover;
+}
+
+.left-side {
+  margin-right: 15%;
+  text-align: center;
+  font-weight: bold;
+}
+
+p {
+  margin: 10% 0 10% 0%;
+  font-size: 1.2em;
+}
+
+.passport-container {
+  background: url(../../assets/passport-background.jpg) no-repeat center fixed;
+  background-size: cover;
+  border: 0.2em solid #2B758C;
+  border-radius: 5%;
+  margin: 0% 20%;
+  opacity: 0.8;
+}
+
+.profile-leaf {
+  height: 2em;
+  width: 2em;
+}
+
+.profile-page {
+  display: flex;
+  flex-direction: row;
+  margin: 0 5%;
+}
+
+.profile-picture {
+  border-radius: 5%;
+  border: 0.25em solid #00962A;
+  height:10em;
+  width: 10em;
+}
+
+

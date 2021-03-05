@@ -10,6 +10,11 @@ const apiCalls = {
     return fetch('https://acnhapi.com/v1a/villagers')
       .then(response => this.checkResponse(response));
     },
+
+  getSelectedVillager(id) {
+    return fetch(`https://acnhapi.com/v1a/villagers/${id}`)
+      .then(response => this.checkResponse(response));
+    },
 }
 
 export default apiCalls;
