@@ -25,7 +25,7 @@ const ProfilePage = ({match}) => {
             <p>{String.fromCodePoint(0x1F330)}Born: {selectedVillager['birthday-string']}</p>
           </div>
          <div className='info'>
-          <p>Personality: {selectedVillager.personality}
+          <p>{String.fromCodePoint(0x1F5E3)}Personality: {selectedVillager.personality}
             <span className='gender'>{String.fromCodePoint(0x26A7)} {selectedVillager.gender}</span>
           </p>
           <p>{String.fromCodePoint(0x1F331)}Species: {selectedVillager.species}</p>
