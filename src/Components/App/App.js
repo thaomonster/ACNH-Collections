@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
-import apiCalls from '../../apiCalls';
+import { getAllVillagers } from '../../apiCalls';
 import VillagerList from '../VillagerList/VillagerList';
 import ProfilePage from '../ProfilePage/ProfilePage';
 
@@ -11,8 +11,10 @@ const App = () => {
   // const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    apiCalls.getAllVillagers()
-      .then(data => setVillagers(data))
+    async function fetchAllVillagers() {
+      setVillagers(await getAllVillagers())
+    }
+    fetchAllVillagers()
   }, [])
 
   const getSearchedVillagers = (inputValue) => {
