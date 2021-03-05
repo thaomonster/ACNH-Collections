@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import leafGreen from '../../assets/leaf-green.png';
 
 const Header = () => {
+  const [searchBar, updateSearch] = useState('')
+
+  const handleOnChange = (event) => {
+    updateSearch(event.target.value.toLowerCase())
+  }
 
   return (
     <header>
