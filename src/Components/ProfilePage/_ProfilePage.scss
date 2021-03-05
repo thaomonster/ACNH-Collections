@@ -3,17 +3,18 @@
 }
 
 h2 {
-  color: rgb(131, 130, 130);
   text-align: center;
 }
 
 .info {
   margin: 0% 1% 0% 0%;
   font-size: 1.2em;
+  font-weight: bold;
 }
 
-.name {
-  font-size: 1.5em;
+.left-side {
+  margin-right: 15%;
+  text-align: center;
 }
 
 p {
@@ -21,10 +22,11 @@ p {
 }
 
 .passport-container {
+  background: url(../../assets/passport-background.jpg) no-repeat center fixed;
+  background-size: 60%;
   border: 0.2em solid #2B758C;
   border-radius: 5%;
   margin: 5% 20%;
-  background-color: #fffffa;
   opacity: 0.8;
 }
 
@@ -39,16 +41,6 @@ p {
   border: 0.25em solid #00962A;
   height:10em;
   width: 10em;
-  margin-right: 15%;
 }
 
-.sayings {
-  background-color: #F6EEE1;
-  border: 0.15em solid #fffffa;
-  border-radius: 10%;
-}
-
-.species {
-  font-size: 1.2em;
-}
 
