@@ -3,7 +3,7 @@ import leafGreen from '../../assets/leaf-green.png';
 
 const Header = ({villagers, searchQuery, updateQuery, getSearchedVillagers}) => {
 
-  const handleOnChange = () => {
+  const filterVillagers = () => {
     const updateVillagers = villagers.filter(villager => villager.name['name-USen'].toLowerCase().includes(searchQuery))
     updateQuery('')
     getSearchedVillagers(updateVillagers)
@@ -17,7 +17,7 @@ const Header = ({villagers, searchQuery, updateQuery, getSearchedVillagers}) => 
             <input
                 type='text'
                 placeholder='Search Villagers'
-                aria-label='Search Villagers'
+                aria-label='Search Villagers' 
                 name='search'
                 value={searchQuery}
                 onChange={event => updateQuery(event.target.value)}
