@@ -12,19 +12,20 @@ const ProfilePage = ({match}) => {
 
   if (selectedVillager) {
     return (
-      <section className='profile-page-wrapper'>
-        <div className='profile-picture'>
+      <section className='passport-container'>
+        <h2>--- PASSPORT ---</h2>
+        <article className='profile-page'>
           <img src={selectedVillager.image_uri} alt='villager profile' />
-        </div>
-        <div className='info-container'>
-          <p>Name: {selectedVillager.name['name-USen']}</p>
-          <p>Personality: {selectedVillager.personality}</p>
-          <p>Birthday: {selectedVillager['birthday-string']}</p>
-          <p>Species: {selectedVillager.species}</p>
-          <p>Gender: {selectedVillager.gender}</p>
-          <p>Catch Phrase: {selectedVillager['catch-phrase']}</p>
-          <p>Saying: {selectedVillager.saying}</p>
-        </div>
+          <div>
+            <p>Name: <b>{selectedVillager.name['name-USen']}</b></p>
+            <p>Personality: <b>{selectedVillager.personality}</b></p>
+            <p>Birthday: <b>{selectedVillager['birthday-string']}</b></p>
+            <p>Species: <b>{selectedVillager.species}</b></p>
+            <p>Gender: <b>{selectedVillager.gender}</b></p>
+            <p>Catch Phrase: <b>{selectedVillager['catch-phrase']}</b></p>
+            <p>Saying: <b>{selectedVillager.saying}</b></p>
+          </div>
+        </article>
       </section>
     )
   }

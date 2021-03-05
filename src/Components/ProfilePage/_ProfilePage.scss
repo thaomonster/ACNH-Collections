@@ -1,18 +1,13 @@
-.info-container {
+.passport-container {
   border: 0.2em solid #2B758C;
+  border-radius: 5%;
+  margin: 5% 10%;
   text-align: center;
-  padding: 5%;
 }
 
-.profile-page-wrapper {
+.profile-page {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 10%;
-}
-
-.profile-picture {
-  border: 0.2em solid #2B758C;
-  padding: 1%;
-  margin-right: 10%;
+  padding: 5%;
 }
