@@ -63,7 +63,6 @@ const App = () => {
             match={match}
             favoriteList={favoriteList}
             setFavoriteList={setFavoriteList}
-            // filterFavoriteVillagers={filterFavoriteVillagers}
           />
         }
       />
