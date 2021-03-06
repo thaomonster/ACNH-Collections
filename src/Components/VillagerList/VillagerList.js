@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import leafGreen from '../../assets/leaf-green.png';
-import leafBlue from '../../assets/leaf-blue.png';
 
 const VillagerList = ({villagers}) => {
 
@@ -15,11 +13,6 @@ const VillagerList = ({villagers}) => {
               <p>{villager.name['name-USen']}</p>
             </div>
           </Link>
-          <img 
-            className='card-leaf' 
-            src={leafBlue} 
-            alt='Leaf Icon'
-            />
         </article>
       </section>
     )

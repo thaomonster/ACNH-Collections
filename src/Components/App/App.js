@@ -8,8 +8,9 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 
 const App = () => {
   const [villagers, setVillagers] = useState([]);
-  const [filteredVillager, setFilteredVillager] = useState([]);
-  // const [favorites, setFavorites] = useState([]);
+  const [filteredVillagers, setFilteredVillagers] = useState([]);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [favoriteList, setFavoriteList] = useState([])
 
   useEffect(() => {
     async function fetchAllVillagers() {
@@ -22,7 +23,7 @@ const App = () => {
     const filterVillagers = villagers.filter(villager => {
       return villager.name['name-USen'].toLowerCase().includes(inputValue)
     })
-    setFilteredVillager(filterVillagers)
+    setFilteredVillagers(filterVillagers)
   }
 
   return (
@@ -30,13 +31,21 @@ const App = () => {
       <Header getSearchedVillagers={getSearchedVillagers} />
         <Route 
           exact path='/' 
-          render={() => 
-            <VillagerList villagers={filteredVillager.length ? filteredVillager : villagers}/>
+          render={ () => 
+            <VillagerList villagers={filteredVillagers.length ? filteredVillagers : villagers} />
           }
         />
       <Route 
         path='/:id'
-        component={ ProfilePage }
+        render={ ({match}) => 
+          <ProfilePage 
+            isFavorite={isFavorite}
+            setIsFavorite={setIsFavorite}
+            match={match}
+            favoriteList={favoriteList}
+            setFavoriteList={setFavoriteList}
+          />
+        }
       />
     </>
   );
