@@ -9,14 +9,13 @@ const ProfilePage = ({match, isFavorite, setIsFavorite, favoriteList, setFavorit
   const [selectedVillager, setSelectedVillager] = useState(null)
   const { id } = match.params
 
-  const handleOnClick = () => {
-    if (!isFavorite) {
-      setFavoriteList([...favoriteList, id])
+  const handleOnClick = () => { 
+    if (favoriteList.includes(id)) {
+      let updatedFavorites = favoriteList.filter(favorite => favorite !== id)
+      setFavoriteList(updatedFavorites)
     } else {
-      const updatedFavoriteList = favoriteList.filter(favorite => favorite !== id)
-      setFavoriteList(updatedFavoriteList)
-    }
-    setIsFavorite(!isFavorite)
+      setFavoriteList([...favoriteList, id])
+    } 
   }
   
   useEffect(() => {
@@ -35,7 +34,7 @@ const ProfilePage = ({match, isFavorite, setIsFavorite, favoriteList, setFavorit
         <div className='passport-container'>
           <h2>--- PASSPORT ---
             <div className='leaf-margin' onClick={handleOnClick}>
-              <img className='profile-leaf' src={isFavorite ? leafGreen : leafBlue} alt='Leaf Icon' />
+              <img className='profile-leaf' src={favoriteList.includes(id) ? leafGreen : leafBlue} alt='Leaf Icon' />
             </div>
           </h2>
           <article className='profile-page'>

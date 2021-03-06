@@ -10,7 +10,6 @@ import FavoriteList from '../FavoriteList/FavoriteList';
 const App = () => {
   const [villagers, setVillagers] = useState([]);
   const [filteredVillagers, setFilteredVillagers] = useState([]);
-  const [isFavorite, setIsFavorite] = useState(false);
   const [favoriteList, setFavoriteList] = useState([])
 
   useEffect(() => {
@@ -26,13 +25,14 @@ const App = () => {
     })
     setFilteredVillagers(filterVillagers)
   }
-
-  const filterFavoriteVillagers = () => {
+  const getFavoriteVillagers = () => {
     if (favoriteList.length) {
       const favoriteVillagers = villagers.filter(villager => favoriteList.includes(villager.id))
       setFilteredVillagers(favoriteVillagers)
     }
   }
+
+  console.log(favoriteList)
 
   return (
     <>
@@ -50,7 +50,7 @@ const App = () => {
       <Route 
         exact path='/favorites'
         render={ () =>
-        <FavoriteList filterFavoriteVillagers={filterFavoriteVillagers}/>
+        <FavoriteList getFavoriteVillagers={getFavoriteVillagers }/>
       } 
       />
     

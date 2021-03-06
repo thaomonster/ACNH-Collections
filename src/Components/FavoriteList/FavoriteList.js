@@ -1,9 +1,9 @@
 import React from 'react';
 import VillagerList from '../VillagerList/VillagerList';
 
-const FavoriteList = ({filterFavoriteVillagers}) => {
-  const favorites = filterFavoriteVillagers()
-
+const FavoriteList = ({getFavoriteVillagers }) => {
+  const favorites = getFavoriteVillagers()
+  
   return (
     <div>
       {favorites.length ? (
