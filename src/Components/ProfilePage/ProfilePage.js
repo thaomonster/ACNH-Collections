@@ -18,7 +18,7 @@ const ProfilePage = ({match}) => {
   if (selectedVillager) {
     return (
       <section>
-        <Link to={'/'}>
+        <Link to='/'>
           <img className='back-button' src={backButton} alt='back button'/>
         </Link>
         <div className='passport-container'>

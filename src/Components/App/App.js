@@ -8,6 +8,7 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 
 const App = () => {
   const [villagers, setVillagers] = useState([]);
+  const [filteredVillager, setFilteredVillager] = useState([]);
   // const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
@@ -21,18 +22,26 @@ const App = () => {
     const filterVillagers = villagers.filter(villager => {
       return villager.name['name-USen'].toLowerCase().includes(inputValue)
     })
-    setVillagers(filterVillagers)
+    setFilteredVillager(filterVillagers)
   }
 
   return (
     <>
-      <Header 
-        getSearchedVillagers={getSearchedVillagers}
-      />
+      <Header getSearchedVillagers={getSearchedVillagers} />
+      {!filteredVillager.length &&
+        <Route 
+          exact path='/' 
+          render={() => 
+            <VillagerList villagers={villagers}/>
+          }
+        />
+      }
       <Route 
-        exact path='/' 
-        render={() => <VillagerList villagers={villagers}/>}
-      />
+          exact path='/' 
+          render={() => 
+            <VillagerList villagers={filteredVillager}/>
+          }
+        />
       <Route 
         path='/:id'
         component={ ProfilePage }
