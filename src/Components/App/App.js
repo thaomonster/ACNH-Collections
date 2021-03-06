@@ -28,18 +28,10 @@ const App = () => {
   return (
     <>
       <Header getSearchedVillagers={getSearchedVillagers} />
-      {!filteredVillager.length &&
         <Route 
           exact path='/' 
           render={() => 
-            <VillagerList villagers={villagers}/>
-          }
-        />
-      }
-      <Route 
-          exact path='/' 
-          render={() => 
-            <VillagerList villagers={filteredVillager}/>
+            <VillagerList villagers={filteredVillager.length ? filteredVillager : villagers}/>
           }
         />
       <Route 
