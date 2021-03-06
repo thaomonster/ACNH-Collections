@@ -1,37 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
-import apiCalls from '../../apiCalls';
+import { getAllVillagers } from '../../apiCalls';
 import VillagerList from '../VillagerList/VillagerList';
 import ProfilePage from '../ProfilePage/ProfilePage';
 
 
 const App = () => {
   const [villagers, setVillagers] = useState([]);
+  const [filteredVillager, setFilteredVillager] = useState([]);
   // const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    apiCalls.getAllVillagers()
-      .then(data => setVillagers(data))
+    async function fetchAllVillagers() {
+      setVillagers(await getAllVillagers())
+    }
+    fetchAllVillagers()
   }, [])
 
   const getSearchedVillagers = (inputValue) => {
     const filterVillagers = villagers.filter(villager => {
-      console.log(villager.name['name-USen'])
       return villager.name['name-USen'].toLowerCase().includes(inputValue)
     })
-    setVillagers(filterVillagers)
+    setFilteredVillager(filterVillagers)
   }
 
   return (
     <>
-      <Header 
-        getSearchedVillagers={getSearchedVillagers}
-      />
+      <Header getSearchedVillagers={getSearchedVillagers} />
+      {!filteredVillager.length &&
+        <Route 
+          exact path='/' 
+          render={() => 
+            <VillagerList villagers={villagers}/>
+          }
+        />
+      }
       <Route 
-        exact path='/' 
-        render={() => <VillagerList villagers={villagers}/>}
-      />
+          exact path='/' 
+          render={() => 
+            <VillagerList villagers={filteredVillager}/>
+          }
+        />
       <Route 
         path='/:id'
         component={ ProfilePage }

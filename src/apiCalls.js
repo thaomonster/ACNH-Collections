@@ -1,20 +1,17 @@
-const apiCalls = {
-  checkResponse(response) {
-    if (response.ok) {
-    return response.json();
-    }
-    throw response;
-    },
-
-  getAllVillagers() {
-    return fetch('https://acnhapi.com/v1a/villagers')
-      .then(response => this.checkResponse(response));
-    },
-
-  getSelectedVillager(id) {
-    return fetch(`https://acnhapi.com/v1a/villagers/${id}`)
-      .then(response => this.checkResponse(response));
-    },
+export const checkResponse = (response) => {
+  if (response.ok) {
+  return response.json();
+ }
+throw response;
 }
 
-export default apiCalls;
+export const getAllVillagers = async () => {
+  const allVillagers = await fetch('https://acnhapi.com/v1a/villagers')
+    return checkResponse(allVillagers)
+}
+
+export const getSelectedVillager =  async (id) => {
+  const selectedVillager = await fetch(`https://acnhapi.com/v1a/villagers/${id}`)
+   return checkResponse(selectedVillager)
+}
+

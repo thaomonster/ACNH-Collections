@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import apiCalls from '../../apiCalls';
+import { getSelectedVillager } from '../../apiCalls';
 import leafGreen from '../../assets/leaf-green.png';
 import backButton from '../../assets/back-button.png';
 
@@ -9,14 +9,16 @@ const ProfilePage = ({match}) => {
   const { id } = match.params
 
   useEffect(() => {
-    apiCalls.getSelectedVillager(id)
-      .then(data => setSelectedVillager(data))
+    async function fetchSelectedVillager(id) {
+      setSelectedVillager(await getSelectedVillager(id))
+    }
+    fetchSelectedVillager(id)
   }, [id])
 
   if (selectedVillager) {
     return (
       <section>
-        <Link to={'/'}>
+        <Link to='/'>
           <img className='back-button' src={backButton} alt='back button'/>
         </Link>
         <div className='passport-container'>
