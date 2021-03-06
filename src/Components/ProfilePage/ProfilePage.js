@@ -5,7 +5,7 @@ import leafBlue from '../../assets/leaf-blue.png';
 import leafGreen from '../../assets/leaf-green.png';
 import backButton from '../../assets/back-button.png';
 
-const ProfilePage = ({match, isFavorite, setIsFavorite, favoriteList, setFavoriteList}) => {
+const ProfilePage = ({match, isFavorite, setIsFavorite, favoriteList, setFavoriteList, filterFavoriteVillagers}) => {
   const [selectedVillager, setSelectedVillager] = useState(null)
   const { id } = match.params
 
@@ -16,6 +16,7 @@ const ProfilePage = ({match, isFavorite, setIsFavorite, favoriteList, setFavorit
       const updatedFavoriteList = favoriteList.filter(favorite => favorite !== id)
       setFavoriteList(updatedFavoriteList)
     }
+    // filterFavoriteVillagers()
     setIsFavorite(!isFavorite)
   }
   

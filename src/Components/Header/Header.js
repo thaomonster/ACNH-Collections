@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import leafGreen from '../../assets/leaf-green.png';
 
 const Header = ({getSearchedVillagers}) => {
@@ -22,10 +23,9 @@ const Header = ({getSearchedVillagers}) => {
           value={query}
           onChange={handleOnChange}
         />
-        <button className='favorite-btn'>
+        <Link to='/favorites'>
           <img className='header-leaf' src={leafGreen} alt='Leaf Icon' />
-          Favorites
-        </button>
+        </Link>
       </form>
     </header>
   )

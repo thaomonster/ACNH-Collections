@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import { getAllVillagers } from '../../apiCalls';
 import VillagerList from '../VillagerList/VillagerList';
 import ProfilePage from '../ProfilePage/ProfilePage';
+import FavoriteList from '../FavoriteList/FavoriteList';
 
 
 const App = () => {
@@ -26,17 +27,35 @@ const App = () => {
     setFilteredVillagers(filterVillagers)
   }
 
+  const filterFavoriteVillagers = () => {
+    if (favoriteList.length) {
+      const favoriteVillagers = villagers.filter(villager => favoriteList.includes(villager.id))
+      setFilteredVillagers(favoriteVillagers)
+    }
+  }
+
   return (
     <>
-      <Header getSearchedVillagers={getSearchedVillagers} />
+      <Header 
+        getSearchedVillagers={getSearchedVillagers} 
+      />
+      
         <Route 
           exact path='/' 
           render={ () => 
             <VillagerList villagers={filteredVillagers.length ? filteredVillagers : villagers} />
           }
         />
+
       <Route 
-        path='/:id'
+        exact path='/favorites'
+        render={ () =>
+        <FavoriteList filterFavoriteVillagers={filterFavoriteVillagers}/>
+      } 
+      />
+    
+      <Route 
+        exact path='/:id'
         render={ ({match}) => 
           <ProfilePage 
             isFavorite={isFavorite}
@@ -44,9 +63,11 @@ const App = () => {
             match={match}
             favoriteList={favoriteList}
             setFavoriteList={setFavoriteList}
+            // filterFavoriteVillagers={filterFavoriteVillagers}
           />
         }
       />
+      
     </>
   );
 }

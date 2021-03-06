@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const VillagerList = ({villagers}) => {
-
   const card = villagers.map(villager => {
     return (
       <section key={villager.id} id={villager.id} >
