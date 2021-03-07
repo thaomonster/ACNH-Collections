@@ -38,7 +38,7 @@ p {
 .passport-container {
   background: url(../../assets/passport-background.jpg) no-repeat center fixed;
   background-size: cover;
-  border: 0.2em solid #2B758C;
+  @include borderStyling();
   border-radius: 5%;
   margin: 0% 20%;
   opacity: 0.8;

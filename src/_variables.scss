@@ -6,3 +6,7 @@
       transform: scale(1.15, 1.15);
     }
 }
+
+@mixin borderStyling() {
+  border: 0.2em solid #2B758C;
+}
