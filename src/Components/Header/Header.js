@@ -43,3 +43,8 @@ const Header = ({getSearchedVillagers, getFilteredVillagers, setFilteredVillager
 
 export default Header;
 
+Header.propTypes = {
+  getSearchedVillagers: PropTypes.func.isRequired,
+  getFilteredVillagers: PropTypes.func.isRequired,
+  setFilteredVillagers: PropTypes.func.isRequired
+}
