@@ -2,7 +2,7 @@ export const checkResponse = (response) => {
   if (response.ok) {
   return response.json();
  }
-throw new Error('Sorry we are having difficulty loading the page, please try again later!');
+  throw new Error('Sorry we are having difficulty loading the page, please try again later!');
 }
 
 export const getAllVillagers = async () => {
