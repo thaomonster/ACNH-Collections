@@ -1,0 +1,8 @@
+@mixin transform() {
+  transition:  0.5s ease;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      transform: scale(1.15, 1.15);
+    }
+}

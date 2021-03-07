@@ -15,6 +15,7 @@ header {
 .header-leaf {
   height: 5em;
   width: 5em;
+  @include transform();
 }
 
 input {
