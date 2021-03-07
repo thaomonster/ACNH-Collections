@@ -5,7 +5,7 @@ import leafBlue from '../../assets/leaf-blue.png';
 import leafGreen from '../../assets/leaf-green.png';
 import backButton from '../../assets/back-button.png';
 
-const ProfilePage = ({match, isFavorite, setIsFavorite, favoriteList, setFavoriteList}) => {
+const ProfilePage = ({match, favoriteList, setFavoriteList}) => {
   const [selectedVillager, setSelectedVillager] = useState(null)
   const { id } = match.params
 

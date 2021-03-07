@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import leafGreen from '../../assets/leaf-green.png';
 
-const Header = ({getSearchedVillagers}) => {
+const Header = ({getSearchedVillagers, getFilteredVillagers}) => {
   const [query, setQuery] = useState('');
 
   const handleOnChange = event => {
     const lowerCaseValue = event.target.value.toLowerCase()
     setQuery(lowerCaseValue)
     getSearchedVillagers(lowerCaseValue)
+  }
+
+  const handleFavoriteClick = () => {
+    console.log('click')
+    getFilteredVillagers()
   }
 
   return (
@@ -23,9 +27,12 @@ const Header = ({getSearchedVillagers}) => {
           value={query}
           onChange={handleOnChange}
         />
-        <Link to='/favorites'>
-          <img className='header-leaf' src={leafGreen} alt='Leaf Icon' />
-        </Link>
+          <img 
+            className='header-leaf'  
+            src={leafGreen} 
+            alt='Leaf Icon' 
+            onClick={handleFavoriteClick}
+          />
       </form>
     </header>
   )

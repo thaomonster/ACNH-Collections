@@ -4,7 +4,6 @@ import Header from '../Header/Header';
 import { getAllVillagers } from '../../apiCalls';
 import VillagerList from '../VillagerList/VillagerList';
 import ProfilePage from '../ProfilePage/ProfilePage';
-import FavoriteList from '../FavoriteList/FavoriteList';
 
 
 const App = () => {
@@ -20,16 +19,18 @@ const App = () => {
   }, [])
 
   const getSearchedVillagers = (inputValue) => {
-    const filterVillagers = villagers.filter(villager => {
+    const filterSearchVillagers = villagers.filter(villager => {
       return villager.name['name-USen'].toLowerCase().includes(inputValue)
     })
-    setFilteredVillagers(filterVillagers)
+    setFilteredVillagers(filterSearchVillagers)
   }
-  const getFavoriteVillagers = () => {
-    if (favoriteList.length) {
-      const favoriteVillagers = villagers.filter(villager => favoriteList.includes(villager.id))
-      setFilteredVillagers(favoriteVillagers)
-    }
+
+  const getFilteredVillagers = () => {
+    const filterFavoriteVillagers = villagers.filter(villager => {
+      favoriteList.includes(villager.id)
+      return villager
+    })
+    setFilteredVillagers(filterFavoriteVillagers)
   }
 
   console.log(favoriteList)
@@ -38,35 +39,28 @@ const App = () => {
     <>
       <Header 
         getSearchedVillagers={getSearchedVillagers} 
+        getFilteredVillagers={getFilteredVillagers}
       />
       
-        <Route 
-          exact path='/' 
-          render={ () => 
-            <VillagerList villagers={filteredVillagers.length ? filteredVillagers : villagers} />
-          }
-        />
-
       <Route 
-        exact path='/favorites'
-        render={ () =>
-        <FavoriteList getFavoriteVillagers={getFavoriteVillagers }/>
-      } 
+        exact path='/' 
+        render={ () => 
+          <VillagerList 
+            villagers={filteredVillagers.length || favoriteList.length? filteredVillagers: villagers} 
+          />
+        }
       />
     
       <Route 
         exact path='/:id'
         render={ ({match}) => 
           <ProfilePage 
-            isFavorite={isFavorite}
-            setIsFavorite={setIsFavorite}
             match={match}
             favoriteList={favoriteList}
             setFavoriteList={setFavoriteList}
           />
         }
       />
-      
     </>
   );
 }
