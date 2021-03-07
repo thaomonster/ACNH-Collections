@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import leafGreen from '../../assets/leaf-green.png';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Header = ({getSearchedVillagers, getFilteredVillagers, setFilteredVillagers}) => {
   const [query, setQuery] = useState('');
@@ -41,3 +42,4 @@ const Header = ({getSearchedVillagers, getFilteredVillagers, setFilteredVillager
 }
 
 export default Header;
+
