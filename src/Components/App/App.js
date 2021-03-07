@@ -8,8 +8,9 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 
 const App = () => {
   const [villagers, setVillagers] = useState([]);
-  const [filteredVillager, setFilteredVillager] = useState([]);
-  // const [favorites, setFavorites] = useState([]);
+  const [filteredVillagers, setFilteredVillagers] = useState([]);
+  const [favoriteList, setFavoriteList] = useState([]);
+  const displayVillagers = filteredVillagers.length ?filteredVillagers : villagers;
 
   useEffect(() => {
     async function fetchAllVillagers() {
@@ -19,32 +20,41 @@ const App = () => {
   }, [])
 
   const getSearchedVillagers = (inputValue) => {
-    const filterVillagers = villagers.filter(villager => {
+    const filterSearchVillagers = villagers.filter(villager => {
       return villager.name['name-USen'].toLowerCase().includes(inputValue)
     })
-    setFilteredVillager(filterVillagers)
+    setFilteredVillagers(filterSearchVillagers)
+  }
+
+  const getFilteredVillagers = () => {
+    const filterFavoriteVillagers = villagers.filter(villager =>  favoriteList.includes(villager.id))
+    setFilteredVillagers(filterFavoriteVillagers)
   }
 
   return (
     <>
-      <Header getSearchedVillagers={getSearchedVillagers} />
-      {!filteredVillager.length &&
-        <Route 
-          exact path='/' 
-          render={() => 
-            <VillagerList villagers={villagers}/>
-          }
-        />
-      }
+      <Header 
+        getSearchedVillagers={getSearchedVillagers} 
+        getFilteredVillagers={getFilteredVillagers}
+        setFilteredVillagers={setFilteredVillagers}
+      />
+      
       <Route 
-          exact path='/' 
-          render={() => 
-            <VillagerList villagers={filteredVillager}/>
-          }
-        />
+        exact path='/' 
+        render={ () => 
+          <VillagerList villagers={displayVillagers} />
+        }
+      />
+    
       <Route 
-        path='/:id'
-        component={ ProfilePage }
+        exact path='/:id'
+        render={ ({match}) => 
+          <ProfilePage 
+            match={match}
+            favoriteList={favoriteList}
+            setFavoriteList={setFavoriteList}
+          />
+        }
       />
     </>
   );

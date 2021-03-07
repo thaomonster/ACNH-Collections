@@ -9,10 +9,9 @@
 }
 
 h2 {
+  @include displayFlexRow();
   font-size: 2em;
-  display: flex;
-  flex-direction: row;
-  margin: 4% 0% 0% 30%;
+  margin: 4% 0% 0% 35%;
 }
 
 .info {
@@ -21,11 +20,10 @@ h2 {
 }
 
 .leaf-margin {
-  margin: -7% 0% 5% 37%;
-  object-fit: cover;
+  margin: -4% 0% 0% 43%;
 }
 
-.left-side {
+.left-side-info {
   margin-right: 15%;
   text-align: center;
   font-weight: bold;
@@ -39,7 +37,7 @@ p {
 .passport-container {
   background: url(../../assets/passport-background.jpg) no-repeat center fixed;
   background-size: cover;
-  border: 0.2em solid #2B758C;
+  @include borderStyling();
   border-radius: 5%;
   margin: 0% 20%;
   opacity: 0.8;
@@ -51,8 +49,7 @@ p {
 }
 
 .profile-page {
-  display: flex;
-  flex-direction: row;
+  @include displayFlexRow();
   margin: 0 5%;
 }
 

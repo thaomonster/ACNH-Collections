@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import leafGreen from '../../assets/leaf-green.png';
+import { Link } from 'react-router-dom';
 
-const Header = ({getSearchedVillagers}) => {
+const Header = ({getSearchedVillagers, getFilteredVillagers, setFilteredVillagers}) => {
   const [query, setQuery] = useState('');
 
   const handleOnChange = event => {
@@ -10,20 +11,31 @@ const Header = ({getSearchedVillagers}) => {
     getSearchedVillagers(lowerCaseValue)
   }
 
+  const handleFavoriteClick = () => {
+    getFilteredVillagers()
+  }
+
   return (
     <header>
-       <h1>ACNH Collections</h1>
-        <form className='nav-section'>
-            <img className='header-leaf' src={leafGreen} alt='Leaf Icon' />
-            <input
-                type='text'
-                placeholder='Search'
-                aria-label='Search' 
-                name='search'
-                value={query}
-                onChange={handleOnChange}
-              />
-        </form>
+      <form>
+        <h1 onClick={() => setFilteredVillagers([])}>ACNH Collections</h1>
+        <input
+          type='text'
+          placeholder='Search'
+          aria-label='Search' 
+          name='search'
+          value={query}
+          onChange={handleOnChange}
+        />
+        <Link to='/'>
+          <img 
+            className='header-leaf'  
+            src={leafGreen} 
+            alt='Leaf Icon' 
+            onClick={handleFavoriteClick}
+          />
+        </Link>
+      </form>
     </header>
   )
 }

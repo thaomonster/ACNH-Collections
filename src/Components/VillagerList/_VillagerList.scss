@@ -5,7 +5,7 @@ a {
 .card {
   text-align: center;
   background: #F6EEE1;
-  border: 0.2em solid #2B758C;
+  @include borderStyling();
   opacity: 0.8;
   border-radius: 10%;
   font-weight: bold;
@@ -20,22 +20,10 @@ a {
   height: 84vh;
 }
 
-.card-leaf {
-  height: 25%;
-  width: 25%;
-  margin-left: 75%;
-  cursor: pointer;
-}
-
 p {
   margin: 0;
 }
 
 .thumbnail-img {
-  transition:  0.5s ease;
-    &:hover,
-    &:focus {
-      cursor: pointer;
-      transform: scale(1.15, 1.15);
-    }
+  @include transform();
 }

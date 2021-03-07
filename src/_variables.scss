@@ -1,0 +1,17 @@
+@mixin transform() {
+  transition:  0.5s ease;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      transform: scale(1.15, 1.15);
+    }
+}
+
+@mixin borderStyling() {
+  border: 0.2em solid #2B758C;
+}
+
+@mixin displayFlexRow() {
+  display: flex;
+  flex-direction: row;
+}

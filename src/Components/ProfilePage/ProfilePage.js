@@ -1,13 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getSelectedVillager } from '../../apiCalls';
+import leafBlue from '../../assets/leaf-blue.png';
 import leafGreen from '../../assets/leaf-green.png';
 import backButton from '../../assets/back-button.png';
 
-const ProfilePage = ({match}) => {
+const ProfilePage = ({match, favoriteList, setFavoriteList}) => {
   const [selectedVillager, setSelectedVillager] = useState(null)
   const { id } = match.params
 
+  const handleOnClick = () => { 
+    const idInNumber = parseInt(id);
+    if (favoriteList.includes(idInNumber)) {
+      let updatedFavorites = favoriteList.filter(favorite => favorite !== idInNumber)
+      setFavoriteList(updatedFavorites)
+    } else {
+      setFavoriteList([...favoriteList, idInNumber])
+    } 
+  }
+  
   useEffect(() => {
     async function fetchSelectedVillager(id) {
       setSelectedVillager(await getSelectedVillager(id))
@@ -23,12 +34,12 @@ const ProfilePage = ({match}) => {
         </Link>
         <div className='passport-container'>
           <h2>--- PASSPORT ---
-            <div className='leaf-margin'>
-              <img className='profile-leaf' src={leafGreen} alt='Leaf Icon' />
+            <div className='leaf-margin' onClick={handleOnClick}>
+              <img className='profile-leaf' src={favoriteList.includes(parseInt(id)) ? leafGreen : leafBlue} alt='Leaf Icon' />
             </div>
           </h2>
           <article className='profile-page'>
-            <div className='left-side'>
+            <div className='left-side-info'>
               <img 
                 src={selectedVillager.image_uri} 
                 alt='villager profile' 
@@ -53,7 +64,7 @@ const ProfilePage = ({match}) => {
 
   return (
     <div>
-      loading
+      <p>Sorry, page is taking a bit to load!</p>
     </div>
   )
 }
