@@ -1,6 +1,5 @@
 form {
-  display: flex;
-  flex-direction: row;
+  @include displayFlexRow();
   justify-content: space-evenly;
 }
 

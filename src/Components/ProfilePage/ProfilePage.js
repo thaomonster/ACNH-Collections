@@ -38,7 +38,7 @@ const ProfilePage = ({match, favoriteList, setFavoriteList}) => {
             </div>
           </h2>
           <article className='profile-page'>
-            <div className='left-side'>
+            <div className='left-side-info'>
               <img 
                 src={selectedVillager.image_uri} 
                 alt='villager profile' 
