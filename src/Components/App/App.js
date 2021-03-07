@@ -9,7 +9,8 @@ import ProfilePage from '../ProfilePage/ProfilePage';
 const App = () => {
   const [villagers, setVillagers] = useState([]);
   const [filteredVillagers, setFilteredVillagers] = useState([]);
-  const [favoriteList, setFavoriteList] = useState([])
+  const [favoriteList, setFavoriteList] = useState([]);
+  const displayVillagers = filteredVillagers.length ?filteredVillagers : villagers;
 
   useEffect(() => {
     async function fetchAllVillagers() {
@@ -26,28 +27,22 @@ const App = () => {
   }
 
   const getFilteredVillagers = () => {
-    const filterFavoriteVillagers = villagers.filter(villager => {
-      favoriteList.includes(villager.id)
-      return villager
-    })
+    const filterFavoriteVillagers = villagers.filter(villager =>  favoriteList.includes(villager.id))
     setFilteredVillagers(filterFavoriteVillagers)
   }
-
-  console.log(favoriteList)
 
   return (
     <>
       <Header 
         getSearchedVillagers={getSearchedVillagers} 
         getFilteredVillagers={getFilteredVillagers}
+        setFilteredVillagers={setFilteredVillagers}
       />
       
       <Route 
         exact path='/' 
         render={ () => 
-          <VillagerList 
-            villagers={filteredVillagers.length ? filteredVillagers: villagers} 
-          />
+          <VillagerList villagers={displayVillagers} />
         }
       />
     

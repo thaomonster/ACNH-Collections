@@ -10,11 +10,12 @@ const ProfilePage = ({match, favoriteList, setFavoriteList}) => {
   const { id } = match.params
 
   const handleOnClick = () => { 
-    if (favoriteList.includes(id)) {
-      let updatedFavorites = favoriteList.filter(favorite => favorite !== id)
+    const idInNumber = parseInt(id);
+    if (favoriteList.includes(idInNumber)) {
+      let updatedFavorites = favoriteList.filter(favorite => favorite !== idInNumber)
       setFavoriteList(updatedFavorites)
     } else {
-      setFavoriteList([...favoriteList, id])
+      setFavoriteList([...favoriteList, idInNumber])
     } 
   }
   
@@ -34,7 +35,7 @@ const ProfilePage = ({match, favoriteList, setFavoriteList}) => {
         <div className='passport-container'>
           <h2>--- PASSPORT ---
             <div className='leaf-margin' onClick={handleOnClick}>
-              <img className='profile-leaf' src={favoriteList.includes(id) ? leafGreen : leafBlue} alt='Leaf Icon' />
+              <img className='profile-leaf' src={favoriteList.includes(parseInt(id)) ? leafGreen : leafBlue} alt='Leaf Icon' />
             </div>
           </h2>
           <article className='profile-page'>
