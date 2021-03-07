@@ -9,9 +9,8 @@
 }
 
 h2 {
+  @include displayFlexRow();
   font-size: 2em;
-  display: flex;
-  flex-direction: row;
   margin: 4% 0% 0% 35%;
 }
 
@@ -50,8 +49,7 @@ p {
 }
 
 .profile-page {
-  display: flex;
-  flex-direction: row;
+  @include displayFlexRow();
   margin: 0 5%;
 }
 

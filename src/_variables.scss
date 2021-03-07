@@ -10,3 +10,8 @@
 @mixin borderStyling() {
   border: 0.2em solid #2B758C;
 }
+
+@mixin displayFlexRow() {
+  display: flex;
+  flex-direction: row;
+}
