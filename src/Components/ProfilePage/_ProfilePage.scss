@@ -12,7 +12,7 @@ h2 {
   font-size: 2em;
   display: flex;
   flex-direction: row;
-  margin: 4% 0% 0% 30%;
+  margin: 4% 0% 0% 35%;
 }
 
 .info {
@@ -21,7 +21,7 @@ h2 {
 }
 
 .leaf-margin {
-  margin: -7% 0% 5% 37%;
+  margin: -7% 0% 0% 9%;
   object-fit: cover;
 }
 
@@ -48,6 +48,7 @@ p {
 .profile-leaf {
   height: 2em;
   width: 2em;
+  margin-left: 6em;
 }
 
 .profile-page {
