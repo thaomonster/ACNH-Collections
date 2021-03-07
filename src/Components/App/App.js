@@ -46,7 +46,7 @@ const App = () => {
         exact path='/' 
         render={ () => 
           <VillagerList 
-            villagers={filteredVillagers.length || favoriteList.length? filteredVillagers: villagers} 
+            villagers={filteredVillagers.length ? filteredVillagers: villagers} 
           />
         }
       />
