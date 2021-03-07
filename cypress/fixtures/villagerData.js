@@ -1,5 +1,5 @@
 {
-  "villagers:" [
+  "villagers": [
     {
       "id": 1,
       "file-name": "ant00",
