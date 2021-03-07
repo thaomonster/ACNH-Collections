@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const VillagerList = ({villagers}) => {
   const card = villagers.map(villager => {
@@ -25,3 +26,11 @@ const VillagerList = ({villagers}) => {
 }
 
 export default VillagerList;
+
+VillagerList.propTypes = {
+  villagers: PropTypes.array.isRequired
+}
+
+VillagerList.defaultProps = {
+  villagers: []
+}

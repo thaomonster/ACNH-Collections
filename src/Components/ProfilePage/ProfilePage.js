@@ -4,6 +4,7 @@ import { getSelectedVillager } from '../../apiCalls';
 import leafBlue from '../../assets/leaf-blue.png';
 import leafGreen from '../../assets/leaf-green.png';
 import backButton from '../../assets/back-button.png';
+import PropTypes from 'prop-types';
 
 const ProfilePage = ({match, favoriteList, setFavoriteList}) => {
   const [selectedVillager, setSelectedVillager] = useState(null)
@@ -70,3 +71,13 @@ const ProfilePage = ({match, favoriteList, setFavoriteList}) => {
 }
 
 export default ProfilePage;
+
+ProfilePage.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      field1: PropTypes.number
+    })
+  }),
+  favoriteList: PropTypes.array.isRequired, 
+  setFavoriteList: PropTypes.func.isRequired
+}
