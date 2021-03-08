@@ -1,6 +1,6 @@
 describe('App', () => {
   beforeEach(() => {
-    // cy.intercept('GET', 'https://acnhapi.com/v1a/villagers', {fixture: 'villagerData.json'});
+    cy.intercept('GET', 'https://acnhapi.com/v1a/villagers', {fixture: 'profilePageData'});
     cy.visit('http://localhost:3000/72');
   })
 
@@ -45,24 +45,24 @@ describe('App', () => {
     cy.get('.loader').should('have.text', 'Sorry, page is taking a bit to load!')
   })
 
-  it('should test user integration', () => {
-    cy.get('.back-button')
-      .click()
-      .url()
-      .should('contain', '/');
-    cy.contains('Moe')
-      .click()
-      .url()
-      .should('contain', '/50')
-      .get('.profile-leaf')
-      .click()
-      .get('.header-leaf')
-      .click()
-      .url()
-      .should('contain', '/')
-      .get('h1')
-      .click()
-      .url()
-      .should('contain', '/');
-  })
+  // it('should test user integration', () => {
+  //   cy.get('.back-button')
+  //     .click()
+  //     .url()
+  //     .should('contain', '/');
+  //   cy.contains('Moe')
+  //     .click()
+  //     .url()
+  //     .should('contain', '/50')
+  //     .get('.profile-leaf')
+  //     .click()
+  //     .get('.header-leaf')
+  //     .click()
+  //     .url()
+  //     .should('contain', '/')
+  //     .get('h1')
+  //     .click()
+  //     .url()
+  //     .should('contain', '/');
+  // })
 })

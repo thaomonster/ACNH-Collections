@@ -1,6 +1,7 @@
 describe('App', () => {
   beforeEach(() => {
-    // cy.intercept('GET', 'https://acnhapi.com/v1a/villagers', {fixture: 'villagerData.json'});
+    cy.intercept('GET', 'https://acnhapi.com/v1a/villagers', {fixture: 'villagerData'});
+    cy.intercept('GET', 'https://acnhapi.com/v1a/villagers/72', {fixture: 'profilePageData'});  
     cy.visit('http://localhost:3000');
   })
   
@@ -17,8 +18,8 @@ describe('App', () => {
 
   it('should to test user integration on home page', () => {
     cy.get('input')
-      .type('Murphy');
-    cy.contains('Murphy')
+      .type('Murphy')
+      .get('.thumbnail-img')
       .click()
       .url()
       .should('contain', '/72')
