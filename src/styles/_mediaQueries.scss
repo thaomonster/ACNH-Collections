@@ -1,0 +1,7 @@
+@import 'variables';
+
+@media only screen and (max-width: 1225px){
+  .poster-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
