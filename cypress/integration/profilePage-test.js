@@ -42,10 +42,6 @@ describe('App', () => {
     cy.get('article').get('p').should('contain', 'Quote')
   })
 
-  // it('should have a paragrapgh stating Sorry, page is taking a bit to load!', () => {
-  //   cy.get('.loader').should('have.text', 'Sorry, page is taking a bit to load!')
-  // })
-
   it('should test user integration', () => {
     cy.get('.back-button')
       .click()
