@@ -1,6 +1,8 @@
+
 describe('App', () => {
-  beforeEach(() => {
-    // cy.intercept('GET', 'https://acnhapi.com/v1a/villagers', {fixture: 'villagerData.json'});
+  before(() => {
+    cy.intercept('GET', 'https://acnhapi.com/v1a/villagers', {fixture: 'villagerData'});
+    cy.intercept('GET', 'https://acnhapi.com/v1a/villagers/72', {fixture: 'profilePageData'});  
     cy.visit('http://localhost:3000');
   })
   
@@ -15,16 +17,18 @@ describe('App', () => {
     cy.get('p');
   })
 
-  it('should to test user integration on home page', () => {
+  it('should to test user integration', () => {
     cy.get('input')
-      .type('Murphy');
-    cy.contains('Murphy')
+      .type('Murphy')
+      .get('.thumbnail-img')
       .click()
       .url()
       .should('contain', '/72')
       .get('.back-button')
       .click()
       .url()
-      .should('contain', '/');
+      .should('contain', '/')
+      .get('input')
+      .clear('input')
   })
 })

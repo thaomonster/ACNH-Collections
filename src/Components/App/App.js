@@ -10,7 +10,7 @@ const App = () => {
   const [villagers, setVillagers] = useState([]);
   const [filteredVillagers, setFilteredVillagers] = useState([]);
   const [favoriteList, setFavoriteList] = useState([]);
-  const displayVillagers = filteredVillagers.length ?filteredVillagers : villagers;
+  const displayVillagers = filteredVillagers.length ? filteredVillagers : villagers;
 
   useEffect(() => {
     async function fetchAllVillagers() {

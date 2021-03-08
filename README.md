@@ -22,7 +22,6 @@ The motivation behind this projects creation was to build an application to help
 * [Villager List Page](#villager-list)
 * [Profile Page](#profile-page)
 * [Mobile View](#mobile-view)
-* [Improvement/Future Improvements](#Improvement/Future-Improvements)
 
 #### Villager List
 Upon page load the site will fetch a list of villagers and display a grid of villager thumbnail image and name. Each villagers's thumbnail image is clickable to redirect you to a new page showing a villager's passport information. A user will also be able to search through the list for a specific villager.
@@ -59,7 +58,7 @@ This application can also be use on mobile. Styling has changed to reflect diffe
 ## Deployment/Setup
 
 ### Deployment
-Visit the site at [ACHN Collections]()
+Visit the site at [ACHN Collections](acnh-collections-k8s8aj2fa-thaomonster.vercel.app)
 
 ### Setup
 In order to deploy this site locally, a user will have to run a local server.

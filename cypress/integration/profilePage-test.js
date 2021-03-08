@@ -1,6 +1,7 @@
 describe('App', () => {
-  beforeEach(() => {
-    // cy.intercept('GET', 'https://acnhapi.com/v1a/villagers', {fixture: 'villagerData.json'});
+  before(() => {
+    cy.intercept('GET', 'https://acnhapi.com/v1a/villagers/72', {fixture: 'profilePageData'});
+    cy.intercept('GET', 'https://acnhapi.com/v1a/villagers', {fixture: 'villagerData'});
     cy.visit('http://localhost:3000/72');
   })
 
@@ -41,19 +42,15 @@ describe('App', () => {
     cy.get('article').get('p').should('contain', 'Quote')
   })
 
-  it('should have a paragrapgh stating Sorry, page is taking a bit to load!', () => {
-    cy.get('.loader').should('have.text', 'Sorry, page is taking a bit to load!')
-  })
-
   it('should test user integration', () => {
     cy.get('.back-button')
       .click()
       .url()
       .should('contain', '/');
-    cy.contains('Moe')
+    cy.contains('Murphy')
       .click()
       .url()
-      .should('contain', '/50')
+      .should('contain', '/72')
       .get('.profile-leaf')
       .click()
       .get('.header-leaf')

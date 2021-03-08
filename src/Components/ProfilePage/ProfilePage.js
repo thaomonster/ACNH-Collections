@@ -27,6 +27,7 @@ const ProfilePage = ({match, favoriteList, setFavoriteList}) => {
     fetchSelectedVillager(id)
   }, [id])
 
+
   if (selectedVillager) {
     return (
       <section>
