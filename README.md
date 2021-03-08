@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+---
+# ACHN Collections
+###### Need more details about the villager? Click on the villager you want and it will take you to a detailed page about the villager.
+---
+## Table of Contents
+* [Introduction](#introduction)
+* [Features](#features)
+* [Technologies](#technologies)
+* [Deployment/Setup](#deployment)
+* [Authors](#authors)
+* [Contributors](#contributors)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Introduction
+The primary goal of [ACNH Colleactions](git@github.com:thaomonster/ACNH-Collections.git) is to have the user be able to see more details about a villager, favorite villager and search villager. ([Project Specs](https://frontend.turing.io/projects/module-3/niche-audience.html)).
 
-In the project directory, you can run:
+#### Motivation
+The motivation behind this projects creation was to build an application to help the user find more details of a villager while  focused on using React as a framework, writing DRY JS, SASS, and accessing data with apis and solidifying good habits in git workflow.
 
-### `npm start`
+---
+## Features
+* [Villager List Page](#villager-list)
+* [Profile Page](#profile-page)
+* [Mobile View](#mobile-view)
+* [Improvement/Future Improvements](#Improvement/Future-Improvements)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Villager List
+Upon page load the site will fetch a list of villagers and display a grid of villager thumbnail image and name. Each villagers's thumbnail image is clickable to redirect you to a new page showing a villager's passport information. A user will also be able to search through the list for a specific villager.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p align = "center">
+<img src="https://media.giphy.com/media/XKqLr7oq5kGL4juOtP/giphy.gif">
+</p>
 
-### `npm test`
+#### Profile Page
+A user is able to see a villager's detailed information from the homepage. A user is able to favorite a villager, go back using the back button to add more to favorite if they would like. Once they have added as much as they want to favorite you are able to click on the leaf in the header and show the favorite list. When a user is done with the favorite list they can click on the title in the header and go back to the home page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align = "center">
+<img src="https://media.giphy.com/media/Wz1FobQabEvhsNGiBW/giphy.gif">
+</p>
 
-### `npm run build`
+#### Mobile View
+This application can also be use on mobile. Styling has changed to reflect differnt screen sizes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align = "center">
+<img src="https://media.giphy.com/media/G0r60AmPisI40c9QLI/giphy.gif">
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
+## Technologies
+ - React
+ - ES6 JavaScript
+ - Testing with Cypress
+ - SCSS 
+ - Lighthouse and ARIA Accessibility
+ - Using network requests with API endpoints and async JavaScript
+ - Deploying a site on Vercel
+ - Git workflow using GitHub Issues and Project Kanban Board
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Deployment/Setup
 
 ### Deployment
+Visit the site at [ACHN Collections]()
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Setup
+In order to deploy this site locally, a user will have to run a local server.
 
-### `npm run build` fails to minify
+  1. Clone (or fork and then clone) this repo with  `git@github.com:thaomonster/ACNH-Collections.git [what you want to name the repo]`
+  2. Change into the directory and run `npm install` to install project dependencies.
+  3. Run `npm start` to start a local server 
+  5. For running cypress testing, run ```npm run cypress``` 
+  6. Enter `control + c` in your terminal to stop the server at any time.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Continuous Improvement/Future Improvements
+  * Continue to build on other api that is provided (items, bugs, fish etc.)
+  * Create a homepage once other routes begin to build out
+  * Refine the MVP
+
+## How to Contribute
+If you are interested in contributing please:
+- clone down this repo: `git@github.com:thaomonster/ACNH-Collections.git`
+- create a new branch: `git checkout -b your-initials/feature/feature-name`
+- contribute as you like
+- in the terminal, push the branch upstream
+- create a pull request via github
+- wait for my reply
+
+## Authors
+<table>
+    <tr>
+        <td> Thao Ma <a href="https://github.com/thaomonster">GH</td>
+ </tr>
+
+<td><img src="https://avatars3.githubusercontent.com/u/67611512?s=400&u=ef3bac38d4f7d6d8a899d26ce1f0eb169f11bb9b&v=4" alt="Ms. Turtle"
+ width="150" height="auto" /></td>
+</table>
+
+## Contributors
+ * Leaf Icon from: https://www.stickpng.com/
+ * Background Image from: reddit.com/user/virtuwual/
