@@ -1,20 +1,73 @@
 @import 'variables';
 
-@media only screen and (max-width: 945px) {
+@media screen and (max-width: 1395px) {
+  h2 {
+    margin: 4% 0% 0% 36%;
+  }
+
+  .leaf-margin {
+    margin-left: 40%;
+  }
+}
+
+@media screen and (max-width: 1345px) {
+  h2 {
+    margin: 4% 0% 0% 10%;
+  }
+}
+
+@media screen and (max-width: 945px) {
   .card-container {
     grid-template-columns: repeat(4, 1fr);
   }
-}
 
-@media only screen and (max-width: 768px) {
-  .card-container {
-    grid-template-columns: repeat(3, 1fr);
+  h2 {
+    margin: 4% 0% 0% 30%;
+  }
+
+  .leaf-margin {
+    margin-left: 21%;
   }
 }
 
-@media only screen and (max-width: 445px) {
+@media screen and (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  h2 {
+    margin: 4% 0% 0% 14%;
+  }
+
+  .leaf-margin {
+    margin-left: 21%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  h2 {
+    margin: 4% 0% 0% 0%;
+  }
+
+  .leaf-margin {
+    margin-left: -2%;
+  }
+
+  .profile-page {
+    @include displayFlexColumn();
+    margin: 0 5%;
+  }
+}
+
+@media screen and (max-width: 445px) {
   .card-container {
     @include displayFlexColumn();
+  }
+
+  h2 {
+    @include displayFlexColumn();
+    font-size: 1.76em;
+    align-items: center
   }
 
   form {
@@ -26,5 +79,10 @@
     width: 50%;
     height: 1.5em;
     margin-top: 2.5%;
+  }
+
+  .profile-page {
+    @include displayFlexColumn();
+    margin: 0 5%;
   }
 }
