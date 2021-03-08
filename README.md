@@ -22,7 +22,6 @@ The motivation behind this projects creation was to build an application to help
 * [Villager List Page](#villager-list)
 * [Profile Page](#profile-page)
 * [Mobile View](#mobile-view)
-* [Improvement/Future Improvements](#Improvement/Future-Improvements)
 
 #### Villager List
 Upon page load the site will fetch a list of villagers and display a grid of villager thumbnail image and name. Each villagers's thumbnail image is clickable to redirect you to a new page showing a villager's passport information. A user will also be able to search through the list for a specific villager.
