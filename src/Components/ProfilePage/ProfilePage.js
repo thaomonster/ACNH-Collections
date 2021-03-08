@@ -64,7 +64,7 @@ const ProfilePage = ({match, favoriteList, setFavoriteList}) => {
   }
 
   return (
-    <div>
+    <div className='loader'> 
       <p>Sorry, page is taking a bit to load!</p>
     </div>
   )
