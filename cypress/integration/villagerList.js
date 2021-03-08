@@ -15,11 +15,10 @@ describe('App', () => {
     cy.get('p')
   })
 
-  // it('should to test user integration', () => {
-  //   cy.contains('Murphy')
-  //     .click()
-  //     .url(
-      
-  //     )
-  // })
+  it('should to test user integration on home page', () => {
+    cy.contains('Murphy')
+      .click()
+      .url()
+      .should('contain', '/72')
+  })
 })
