@@ -1,6 +1,6 @@
 describe('App', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'https://acnhapi.com/v1a/villagers', {fixture: 'villagerData'});
+    // cy.intercept('GET', 'https://acnhapi.com/v1a/villagers', {fixture: 'villagerData.json'});
     cy.visit('http://localhost:3000');
   })
   
@@ -11,6 +11,15 @@ describe('App', () => {
   })
 
   it('should show each villager card with a thumbnail image and name', () => {
-    // cy.get('article').find('img').should('have.attr', 'src', '')
+    cy.get('div').should('have.class', 'thumbnail-img');
+    cy.get('p')
   })
+
+  // it('should to test user integration', () => {
+  //   cy.contains('Murphy')
+  //     .click()
+  //     .url(
+      
+  //     )
+  // })
 })
