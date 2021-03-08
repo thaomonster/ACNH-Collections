@@ -19,38 +19,22 @@ The motivation behind this projects creation was to build an application to help
 
 ---
 ## Features
-* [Villager List](#villager-list)
-* [Search](#search)
+* [Villager List Page](#villager-list)
 * [Profile Page](#profile-page)
-* [Favorite](#favorite)
 * [Improvement/Future Improvements](#Improvement/Future-Improvements)
 
 #### Villager List
-Upon page load the site will fetch a list of villagers and display a grid of villager thumbnail image and name. Each villagers's thumbnail image is clickable to redirect you to a new page showing a villager's passport information.
+Upon page load the site will fetch a list of villagers and display a grid of villager thumbnail image and name. Each villagers's thumbnail image is clickable to redirect you to a new page showing a villager's passport information. A user will also be able to search through the list for a specific villager.
 
 <p align = "center">
 <img src="https://media.giphy.com/media/VIkDWxDTrTsvOkSgyW/giphy.gif">
 </p>
 
-#### Search
-A user will also be able to search through the list for a specific villager.
-
-<p align = "center">
-<img src="https://media.giphy.com/media/esc0pD89RJchK6wpKm/giphy.gif">
-</p>
-
 #### Profile Page
-A user is able to see a villager's detailed information from the homepage.
+A user is able to see a villager's detailed information from the homepage. A user is able to favorite a villager, go back using the back button to add more to favorite if they would like. Once they have added as much as they want to favorite you are able to click on the leaf in the header and show the favorite list. When a user is done with the favorite list they can click on the title in the header and go back to the home page.
 
 <p align = "center">
 <img src="https://media.giphy.com/media/4rkvbjAkBBGc3JHlrY/giphy.gif">
-</p>
-
-#### Favorite
-A user is able to favorite a villager, go back using the back button to add more to favorite if they would like. Once they have added as much as they want to favorite you are able to click on the leaf in the header and show the favorite list. When a user is done with the favorite list they can click on the title in the header and go back to the home page.
-
-<p align = "center">
-<img src="https://media.giphy.com/media/E4d3pSTWFcSINJ8rfU/giphy.gif">
 </p>
 
 ---
