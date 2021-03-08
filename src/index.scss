@@ -1,7 +1,8 @@
-@import './variables';
+@import './styles/variables';
 @import './Components/Header/Header.scss';
 @import './Components/VillagerList/VillagerList.scss';
 @import './Components/ProfilePage/ProfilePage.scss';
+@import './styles/mediaQueries';
 
 body, html {
   margin: 0;
@@ -9,3 +10,4 @@ body, html {
   background-size: cover;
   height: 100vh;
 }
+
