@@ -45,7 +45,7 @@ describe('App', () => {
     cy.get('.loader').should('have.text', 'Sorry, page is taking a bit to load!')
   })
 
-  it.only('should test user integration', () => {
+  it('should test user integration', () => {
     cy.get('.back-button')
       .click()
       .url()
