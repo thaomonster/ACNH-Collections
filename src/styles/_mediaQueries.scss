@@ -1,7 +1,30 @@
 @import 'variables';
 
-@media only screen and (max-width: 1225px){
-  .poster-grid {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+@media only screen and (max-width: 945px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 445px) {
+  .card-container {
+    @include displayFlexColumn();
+  }
+
+  form {
+    @include displayFlexColumn();
+    align-items: center;
+  }
+
+  input {
+    width: 50%;
+    height: 1.5em;
+    margin-top: 2.5%;
   }
 }
