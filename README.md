@@ -58,7 +58,7 @@ This application can also be use on mobile. Styling has changed to reflect diffe
 ## Deployment/Setup
 
 ### Deployment
-Visit the site at [ACHN Collections](acnh-collections-k8s8aj2fa-thaomonster.vercel.app)
+Visit the site at [ACHN Collections](https://acnh-collections.vercel.app)
 
 ### Setup
 In order to deploy this site locally, a user will have to run a local server.
